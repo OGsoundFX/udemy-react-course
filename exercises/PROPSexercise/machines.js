@@ -6,7 +6,9 @@ class Machine extends React.Component {
     return (
       <div>
         <h1>{this.props.f1}{this.props.f2}{this.props.f3}</h1>
-        <h1>
+        <h1 className={winLose(this.props.f1, this.props.f2, this.props.f3)
+          ? "win" : "lose"
+          }>
           {
             winLose(this.props.f1, this.props.f2, this.props.f3)
             ? "You Win"
