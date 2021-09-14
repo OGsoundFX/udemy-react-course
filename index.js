@@ -24,7 +24,9 @@ function Goodbye() {
 };
 
 // 3- Simple variable
-const element = <div><h3>This is a test</h3><p>testing some shit</p></div>;
+// The curly braces (without $ sign) enables interpolation in JSX
+const number = Math.floor(Math.random() * 10) + 1;
+const element = <div><h3>This is a test</h3><p>testing some shit with the number {number}</p></div>;
 
 ReactDOM.render(<Hello/>, document.getElementById('root'));
 ReactDOM.render(<Goodbye/>, document.getElementById('goodbye'));
