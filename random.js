@@ -10,4 +10,4 @@ class Random extends React.Component {
   }
 }
 
-ReactDOM.render(<Random/>, document.getElementById('random'));
+// ReactDOM.render(<Random/>, document.getElementById('root'));

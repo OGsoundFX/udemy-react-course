@@ -10,4 +10,4 @@ class Ternary extends React.Component {
   }
 }
 
-ReactDOM.render(<Ternary/>, document.getElementById('ternary'));
+// ReactDOM.render(<Ternary/>, document.getElementById('root'));
