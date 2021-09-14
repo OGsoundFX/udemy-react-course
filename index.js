@@ -1,3 +1,6 @@
+// 3 Ways of creating components and passing them to the DOM
+
+// 1- Class
 class Hello extends React.Component {
   render () {
     return (
@@ -7,8 +10,10 @@ class Hello extends React.Component {
       </div>
     );
   }
-}
+};
 
+
+// 2- Function
 function Goodbye() {
   return (
     <div>
@@ -16,7 +21,11 @@ function Goodbye() {
       <p>This was nice</p>
     </div>
   );
-}
+};
+
+// 3- Simple variable
+const element = <div><h3>This is a test</h3><p>testing some shit</p></div>;
 
 ReactDOM.render(<Hello/>, document.getElementById('root'));
 ReactDOM.render(<Goodbye/>, document.getElementById('goodbye'));
+ReactDOM.render(element, document.getElementById('testing'));

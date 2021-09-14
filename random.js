@@ -1,3 +1,5 @@
+// creating several files for your components works too
+
 class Random extends React.Component {
   render () {
     return (
