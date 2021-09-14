@@ -10,7 +10,7 @@ class Machine extends React.Component {
           {
             winLose(this.props.f1, this.props.f2, this.props.f3)
             ? "You Win"
-            : "You Lose"
+            : <em>You lose</em>
           }
         </h1>
       </div>
