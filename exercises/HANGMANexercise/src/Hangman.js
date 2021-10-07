@@ -62,15 +62,16 @@ class Hangman extends Component {
 
   /** render: render game */
   render() {
+    const gameOver = this.state.nWrong >= this.props.maxWrong;
     return (
       <div className='Hangman'>
         <h1>Hangman</h1>
-        <img src={this.state.nWrong >= this.props.maxWrong ? this.props.images[this.props.maxWrong] : this.props.images[this.state.nWrong]} alt={this.state.nWrong + ' wrong answers'} />
-        <p>Number of wrong: {this.state.nWrong >= this.props.maxWrong ? this.props.maxWrong : this.state.nWrong }</p>
-        <p className='Hangman-word'>{ this.state.nWrong >= this.props.maxWrong ? `You Lose` : this.guessedWord()}</p>
-        <p>{this.state.nWrong >= this.props.maxWrong ? `The answer was: ` + this.state.answer : false }</p>
-        <p className='Hangman-btns'>{ this.state.nWrong < this.props.maxWrong ? this.generateButtons() : false}</p>
-        { this.state.nWrong >= this.props.maxWrong ? <p><Restart /></p> : false }
+        <img src={gameOver ? this.props.images[this.props.maxWrong] : this.props.images[this.state.nWrong]} alt={this.state.nWrong + ' wrong answers'} />
+        <p>Number of wrong: {gameOver ? this.props.maxWrong : this.state.nWrong }</p>
+        <p className='Hangman-word'>{ gameOver ? `You Lose` : this.guessedWord()}</p>
+        <p>{gameOver ? `The answer was: ` + this.state.answer : false }</p>
+        <p className='Hangman-btns'>{ !gameOver ? this.generateButtons() : false}</p>
+        { gameOver ? <p><Restart /></p> : false }
       </div>
     );
   }
